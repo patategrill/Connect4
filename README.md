@@ -1,1 +1,1 @@
-# puissance4 en python 
+# ConnectFour in python
