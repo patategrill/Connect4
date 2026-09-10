@@ -122,7 +122,7 @@ while not end:
 
     elif draw(grid):
             display_grid(grid)
-            print("🤝 Draw") 
+            print("Draw") 
             end = True
 
     else:
