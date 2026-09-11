@@ -1,1 +1,1 @@
-# ConnectFour in python
+#### ConnectFour and tictactoe (in construction) in python
