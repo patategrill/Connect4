@@ -15,7 +15,19 @@ int empty_grid() {
 }    
 
 int display_grid() {
-    for (i=0,i<,i++)
-
+    for (i=0;i<7;i++) {
+        for (j=0;j<6;j++){
+            if (grid[i][j] == 0){
+                printf(" . ");
+            }
+            else if (grid[i][j] == 1){
+                printf(" x ");
+            }
+            else if(grid[i][j] == 2) {
+                printf(" o ");
+            }
+        }
+        
+    }
     printf('\n');
 }
