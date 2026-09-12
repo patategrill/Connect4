@@ -31,3 +31,20 @@ int display_grid() {
     }
     printf('\n');
 }
+
+int possible_move(col){
+    return grid[0][col] == 0;
+}
+
+int play(n_player, col) {
+    for (i=5;i>0;i--)
+    {
+        if (grid[col] == 0)
+        {
+            grid[col][i] = n_player;
+            break;
+        }
+        return grid;
+    }
+    
+}
