@@ -46,5 +46,33 @@ int play(n_player, col) {
         }
         return grid;
     }
+
+}
+
+int horizontal(n_player, line, col) {
+    for (i=0;i<4;i++)
+    {
+        if (grid[line][col+i])
+        {
+            return false;
+        }
+    return true;
+    }
+
+}
+
+int vertical(n_player,lig,col) {
+    if (lig > 2)
+    {
+        return false;
+    }
+    for (i=0;i<4;i++)
+    {
+        if (grid[lig+1][col] != n_player)
+        {
+            return false;
+        }
+    return true;
+    }
     
 }
