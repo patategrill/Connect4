@@ -26,8 +26,7 @@ int display_grid() {
             else if(grid[i][j] == 2) {
                 printf(" o ");
             }
-        }
-        
+        }      
     }
     printf('\n');
 }
@@ -46,7 +45,6 @@ int play(n_player, col) {
         }
         return grid;
     }
-
 }
 
 int horizontal(n_player, line, col) {
@@ -58,7 +56,6 @@ int horizontal(n_player, line, col) {
         }
     return true;
     }
-
 }
 
 int vertical(n_player,lig,col) {
@@ -73,6 +70,42 @@ int vertical(n_player,lig,col) {
             return false;
         }
     return true;
+    }
+}
+
+int diag_top(n_player,lig,col){
+    for (i=0;i<4;i++)
+    {
+        if (grid[lig-i][col+i] != n_player)
+        {
+            return false;
+        }
+        return true;
+    }   
+}
+
+int diag_bottom(n_player,lig,col){
+    for (i=0;i<4;i++)
+    {
+        if (grid[lig+i][col+i] != n_player)
+        {
+            return false;
+        }
+        return true;
+    }   
+}
+
+int victory(n_player,lig,col){
+    if (vertical(n_player,lig,col))
+    {
+        return true;
+    }
+    
+    for (i=0;i<5; i++)/*Error here max in py doesnt exist*/
+    {
+        if horizontal(n_player,lig,c){
+            return true;
+        }
     }
     
 }
