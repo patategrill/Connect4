@@ -103,9 +103,48 @@ int victory(n_player,lig,col){
     
     for (i=0;i<5; i++)/*Error here max in py doesnt exist*/
     {
-        if horizontal(n_player,lig,c){
+        if (horizontal(n_player,lig,col)){
             return true;
         }
+    }
+    
+    for (i=-3;i<1;i++)
+    {
+        int l=lig+i;
+        int c=col+i;
+        if (0 <= l <= 2 & 0 <= c <= 3)
+        {
+            if (diag_bottom(n_player,l,c))
+            {
+                return true;
+            }
+            
+        }
+        
+    }
+    
+    for (i=-3;i<1;i++)
+    {
+        int l=lig-i;
+        int c=col+i;
+
+        if (3 <= l <= 5 & 0 <= c <= 3)
+        {
+            if (diag_top(n_player,l,c))
+            {
+                return true;
+            }
+            
+        }
+        return false;
+    }
+    
+}
+
+int draw(){
+    for (i=0;i<6; i++)
+    {
+        
     }
     
 }
