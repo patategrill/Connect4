@@ -3,18 +3,17 @@
 int grid[6][7];
 int i,j;
 
-int empty_grid() {
-    
+void empty_grid() {
     for (i=0;i<6;i++)
     {
-        for (j=0;i<7;i++)
+        for (j=0;j<7;i++)
         {
             grid[i][j]=0;
         }
     }
 }    
 
-int display_grid() {
+void display_grid() {
     for (i=0;i<6;i++) {
         for (j=0;j<7;j++){
             if (grid[i][j] == 0){
@@ -152,10 +151,17 @@ int draw(){
     return true;
 }
 
-player=1;
-end=false;
+int player=1;
+bool end=false;
+int col;
 
-while ()
-{
-    
+int main(){
+    while (!end)
+    {
+        display_grid();
+
+        printf('Player %d, choose a column (0 to 6) : ' ,player);
+        scanf("%d",&col);
+    }
 }
+
