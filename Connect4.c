@@ -5,9 +5,9 @@ int i,j;
 
 int empty_grid() {
     
-    for (i=0;i<7;i++)
+    for (i=0;i<6;i++)
     {
-        for (j=0;i<6;i++)
+        for (j=0;i<7;i++)
         {
             grid[i][j]=0;
         }
@@ -15,8 +15,8 @@ int empty_grid() {
 }    
 
 int display_grid() {
-    for (i=0;i<7;i++) {
-        for (j=0;j<6;j++){
+    for (i=0;i<6;i++) {
+        for (j=0;j<7;j++){
             if (grid[i][j] == 0){
                 printf(" . ");
             }
@@ -142,9 +142,20 @@ int victory(n_player,lig,col){
 }
 
 int draw(){
-    for (i=0;i<6; i++)
+    for (i=0;i<7;i++)
     {
-        
+        if (grid[0][i]==0)
+        {
+            return false;
+        }
     }
+    return true;
+}
+
+player=1;
+end=false;
+
+while ()
+{
     
 }
