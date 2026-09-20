@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int grid[6][7];
-int i,j;
+int i,j,lig,line,col;
 
 void empty_grid() {
     for (i=0;i<6;i++)
@@ -27,7 +27,7 @@ void display_grid() {
             }
         }      
     }
-    printf('\n');
+    printf("\n");
 }
 
 int possible_move(col){
@@ -153,7 +153,6 @@ int draw(){
 
 int player=1;
 bool end=false;
-int col;
 
 int main(){
     while (!end)
@@ -162,6 +161,51 @@ int main(){
 
         printf('Player %d, choose a column (0 to 6) : ' ,player);
         scanf("%d",&col);
+
+        if (col < 0 || col > 6)
+        {
+            printf("Invalid Column");
+            continue;
+        }
+        
+        if (!possible_move(grid,col))
+        {
+            printf("Column full");
+            continue;
+        }
+        
+        play(grid,player,col);
+
+        for (i=0;i<6;i++)
+        {
+            if (grid[lig][col]==player)
+            {
+                line==lig;
+                break;
+            }
+        }
+        if (victory(grid,player,line,col))
+        {
+            display_grid();
+            printf("Player %d has won!", player);
+            end==true;
+        }
+        
+        else if (draw())
+        {
+            display_grid();
+            printf("Draw");
+            end==true;
+        }
+        
+        else{
+            if (player == 1) {
+                player = 2;
+            }
+            else {
+                player = 1;
+            }
+            
+        }
     }
 }
-
